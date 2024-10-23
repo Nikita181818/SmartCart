@@ -1,62 +1,116 @@
-footer{
+/* Footer.css */
+footer {
     margin: 0 auto;
-    /* border: 1px solid black; */
     background-color: #f8f9fb;
-    
 }
-.footer-logo{
+
+.footer-logo {
     display: flex;
     justify-content: center;
     margin-top: 2vw;
     margin-bottom: 1vw;
 }
-.logo-heading{
+
+.logo-heading {
     position: relative;
     top: 0.6vw;
     color: #61748b;
     margin-left: 0.8vw;
     font-weight: 400;
 }
-footer img{
+
+footer img {
     height: 3vw;
 }
 
-.icons-div{
+.icons-div {
     width: 8vw;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: space-around;
     margin: 1.2vw auto;
     margin-bottom: 0.2vw;
 }
-.icons{
+
+.icons {
     height: 1.5vw;
-   
 }
 
-ul{
+ul {
     list-style-type: none;
-    /* border: 1px solid black; */
     width: 25vw;
     display: flex;
     justify-content: space-between;
     color: #61748b;
-    
 }
 
-.copyright{
+.copyright {
     padding-left: 2vw;
     padding-right: 2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* border: 1px solid black; */
 }
-.copyright-para{
+
+.copyright-para {
     margin: 1.4vw auto;
     color: #61748b; 
 }
 
-.icons:hover{
+.icons:hover {
     transform: scale(1.2);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .footer-logo {
+        flex-direction: column; /* Stack logo and heading */
+        align-items: center;
+    }
+
+    .logo-heading {
+        margin-left: 0; /* Center the heading */
+    }
+
+    ul {
+        width: 60vw; /* Increase width for medium screens */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    ul li {
+        margin: 5px 0; /* Add spacing between items */
+    }
+
+    .icons-div {
+        width: 60vw; /* Increase icon container width */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo img {
+        height: 4vw; /* Adjust logo size */
+    }
+
+    .icons {
+        height: 2vw; /* Increase icon size for small screens */
+    }
+
+    ul {
+        width: 80vw; /* Further increase width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 20px 10px; /* Add padding for mobile */
+    }
+
+    .copyright-para {
+        font-size: 12px; /* Smaller text for copyright */
+        text-align: center; /* Center align */
+    }
+
+    .icons {
+        height: 2.5vw; /* Adjust icon size */
+    }
 }

@@ -1,27 +1,60 @@
 .breadcrum {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: #555;
-    padding: 10px 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrum img {
+  width: 12px;
+  height: 12px;
+}
+
+.breadcrum a {
+  color: #ff4141;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.breadcrum a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .breadcrum {
+      flex-direction: column;
+      align-items: flex-start; /* Align items to start in column layout */
+      padding: 10px; /* Reduce padding for smaller screens */
   }
-  
+
   .breadcrum img {
-    width: 12px;
-    height: 12px;
+      width: 10px; /* Slightly smaller arrows */
+      height: 10px;
   }
-  
+
   .breadcrum a {
-    color: #ff4141;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 12px;
+      font-size: 11px; /* Slightly smaller font size */
   }
-  
-  .breadcrum a:hover {
-    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .breadcrum {
+      gap: 5px; /* Reduce gap between elements */
   }
+
+  .breadcrum a {
+      font-size: 10px; /* Further reduce font size for mobile */
+  }
+
+  .breadcrum img {
+      width: 8px; /* Even smaller arrows for mobile */
+      height: 8px;
+  }
+}

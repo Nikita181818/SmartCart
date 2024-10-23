@@ -107,3 +107,16 @@
       margin-top: 0.6vw;
       background-color: gray;
   }
+  @media(max-width:1280px)
+  {
+    .navbar{
+        padding: 12px 50px;
+    }
+    .nav-logo{
+        width: 40px;
+       
+    }
+    .nav-logo-p{
+        font-size: 25px;
+    }
+  } 

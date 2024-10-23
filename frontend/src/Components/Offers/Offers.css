@@ -1,4 +1,5 @@
-.offer{
+/* Offers.css */
+.offer {
     height: 60vh;
     display: flex;
     margin: auto;
@@ -16,25 +17,25 @@
 
 .left h1 {
     color: #090909;
-    font-size: 75px;
+    font-size: 75px; /* Initial font size */
     font-weight: 600;
 }
 
 .left p {
     color: #090909;
-    font-size: 20px;
+    font-size: 20px; /* Initial font size */
     font-weight: 500;
     margin-top: 20px;
 }
 
 .left button {
-    width: 300px;
-    height: 75px;
+    width: 300px; /* Initial button width */
+    height: 75px; /* Initial button height */
     border-radius: 35px;
     background: #ff4141;
     border: none;
     color: white;
-    font-size: 22px;
+    font-size: 22px; /* Initial font size */
     font-weight: 500;
     margin-top: 25px;
     cursor: pointer;
@@ -48,4 +49,78 @@
     align-items: center;
     justify-content: flex-end;
     padding-top: 50px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .offer {
+        padding: 0 40px; /* Reduce padding for medium screens */
+        height: auto; /* Allow height to adjust */
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .left h1 {
+        font-size: 60px; /* Adjust font size */
+    }
+
+    .left p {
+        font-size: 18px; /* Adjust paragraph font size */
+    }
+
+    .left button {
+        width: 250px; /* Reduce button width */
+        height: 65px; /* Reduce button height */
+        font-size: 20px; /* Adjust button font size */
+    }
+
+    .right {
+        padding-top: 20px; /* Reduce padding */
+        justify-content: center; /* Center image on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .offer {
+        padding: 0 20px; /* Further reduce padding */
+    }
+
+    .left h1 {
+        font-size: 50px; /* Smaller heading size */
+    }
+
+    .left p {
+        font-size: 16px; /* Smaller paragraph size */
+    }
+
+    .left button {
+        width: 200px; /* Further reduce button width */
+        height: 55px; /* Further reduce button height */
+        font-size: 18px; /* Smaller button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .offer {
+        height: auto; /* Allow height to adjust fully */
+        margin-bottom: 50px; /* Reduce margin */
+    }
+
+    .left h1 {
+        font-size: 40px; /* Smaller heading for mobile */
+    }
+
+    .left p {
+        font-size: 14px; /* Smaller paragraph size for mobile */
+    }
+
+    .left button {
+        width: 100%; /* Full width button */
+        height: 50px; /* Smaller button height */
+        font-size: 16px; /* Smaller button font size */
+    }
+
+    .right img {
+        width: 100%; /* Responsive image */
+        height: auto; /* Maintain aspect ratio */
+    }
 }

@@ -95,3 +95,9 @@
   .terms a:hover {
     text-decoration: underline;
   }
+  .span1{
+    cursor: pointer;
+  }
+  .span2{
+    cursor: pointer;
+  }

@@ -1,23 +1,67 @@
+/* RelatedProduct.css */
 .relatedproducts {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.relatedproducts h1 {
+  font-size: 36px; /* Initial font size */
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.relatedproducts hr {
+  width: 50px;
+  border: 2px solid #ff4141;
+  margin: 0 auto 40px auto;
+}
+
+.relatedproducts-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
   .relatedproducts h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
+      font-size: 30px; /* Adjust heading size for medium screens */
   }
-  
+
   .relatedproducts hr {
-    width: 50px;
-    border: 2px solid #ff4141;
-    margin: 0 auto 40px auto;
+      width: 40px; /* Smaller hr for medium screens */
   }
-  
+}
+
+@media (max-width: 768px) {
+  .relatedproducts {
+      padding: 30px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .relatedproducts h1 {
+      font-size: 28px; /* Smaller heading size */
+  }
+
+  .relatedproducts hr {
+      width: 35px; /* Adjust hr width */
+  }
+}
+
+@media (max-width: 480px) {
+  .relatedproducts {
+      padding: 20px 5px; /* Further reduce padding for mobile */
+  }
+
+  .relatedproducts h1 {
+      font-size: 24px; /* Smallest heading size */
+  }
+
+  .relatedproducts hr {
+      width: 30px; /* Adjust hr width for mobile */
+  }
+
   .relatedproducts-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items */
   }
+}

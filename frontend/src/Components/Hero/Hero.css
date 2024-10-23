@@ -1,91 +1,141 @@
-*{
+/* Hero.css */
+* {
     box-sizing: border-box;
 }
-.landing-page-div{
-    background: rgb(241,215,216);
-    background: linear-gradient(0deg, rgba(241,215,216,1) 42%, rgba(254,254,254,1) 100%);
-    /* border: 1px solid black; */
-    height: 47vw;
-    font-family :Poppins, sans-serif;
-    animation: fadeInAnimation 2s 1  ;
-    
+
+.landing-page-div {
+    background: rgb(241, 215, 216);
+    background: linear-gradient(0deg, rgba(241, 215, 216, 1) 42%, rgba(254, 254, 254, 1) 100%);
+    height: 47vw; /* Initial height */
+    font-family: Poppins, sans-serif;
+    animation: fadeInAnimation 2s 1;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding for better spacing */
 }
 
-.hero_icon{
-    position: relative;
-    bottom: 2vw;
-    left : 57.2vw;
-    height : 120vh;
-    
+.hero_icon {
+    height: 120vh; /* Initial height */
 }
-@keyframes fadeInAnimation{
-    0%{
+
+@keyframes fadeInAnimation {
+    0% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 }
 
-.left-part{
-    /* border: 1px solid black; */
-    /* background-color: black; */
-    /* display: flex;
-    flex-direction: column; */
+.left-part {
     position: relative;
-    bottom: 45vw;
-    left: 11.8vw;
-    width: 40vw;
-    
-
-}
-.hand_icon{
-    height: 7vw;;
-    width: 7vw;
+    width: 40vw; /* Initial width */
+    text-align: left; /* Align text to the left */
 }
 
-.left-part p{
-    /* border: 1px solid black; */
+.hand_icon {
+    height: 7vw; /* Icon size */
+    width: 7vw; /* Icon size */
+}
+
+.left-part p {
     color: black;
-    font-size: 5vw;
+    font-size: 5vw; /* Initial font size */
     font-weight: 550;
 }
 
-.first-line{
+.first-line {
     display: flex;
-    /* border: 1px solid black; */
 }
 
 .first-line p {
-    margin-left: 0.8vw ;
+    margin-left: 0.8vw;
     position: relative;
     top: 3vh;
 }
 
-.latest_collection{
+.latest_collection {
     background-color: rgb(255, 65, 65);
-    width: 18vw;
-    height: 10vh;
+    width: 18vw; /* Button width */
+    height: 10vh; /* Button height */
     border-radius: 20vw;
     border: 0;
-    font-size: 1.4vw;
-    padding: 1.2vw;
+    font-size: 1.4vw; /* Button font size */
+    padding: 1.2vw; /* Button padding */
     color: white;
     position: relative;
-    left: 0.4vw;
 }
 
-.arrow-name{
+.arrow-name {
     position: relative;
-    right: 3vw;
+    right: 3vw; /* Adjust position */
 }
 
-.second-line{
+.second-line {
     position: relative;
     top: 0.8vw;
 }
 
-.third-line{
+.third-line {
     position: relative;
-    
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .landing-page-div {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Adjust height */
+    }
+
+    .hero_icon {
+        height: 80vh; /* Adjust image height */
+    }
+
+    .left-part {
+        width: 70vw; /* Increase width for smaller screens */
+        text-align: center; /* Center text */
+    }
+
+    .left-part p {
+        font-size: 4.5vw; /* Adjust font size */
+    }
+
+    .latest_collection {
+        width: 70%; /* Adjust button width */
+        font-size: 3vw; /* Adjust font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero_icon {
+        height: 60vh; /* Further adjust image height */
+    }
+
+    .left-part {
+        width: 90vw; /* Take more width on smaller screens */
+    }
+
+    .left-part p {
+        font-size: 5vw; /* Increase font size */
+    }
+
+    .latest_collection {
+        width: 80%; /* Adjust button width */
+        font-size: 4vw; /* Larger font for buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero_icon {
+        height: 40vh; /* Smaller height for very small screens */
+    }
+
+    .left-part p {
+        font-size: 6vw; /* Larger font for small screens */
+    }
+
+    .latest_collection {
+        font-size: 5vw; /* Larger font for buttons */
+    }
 }

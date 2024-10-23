@@ -1,33 +1,62 @@
+/* NewCollections.css */
 .new_collection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;    /*Adjusted padding value*/
-    /* padding: 40px 20px;
-    background-color: #f9f9f9;
-    text-align: center; */
-  }
-  
-  .new_collection_heading h1 {
-    color: #171717;
-    font-size: 36px;
-    /* font-weight: 500; */
-    margin-bottom: 20px;
-  }
-  
-  .new_collection hr {
-    width: 50px;
-    border: 2px solid #ff4141;
-    margin: 0 auto 40px auto;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px; /* Adjusted padding value */
+}
+
+.new_collection_heading h1 {
+  color: #171717;
+  font-size: 36px; /* Heading font size */
+  margin-bottom: 20px;
+}
+
+.new_collection hr {
+  width: 50px;
+  border: 2px solid #ff4141;
+  margin: 0 auto 40px auto;
+}
+
+.new_collection_items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns by default */
+  margin-top: 5px;
+  gap: 30px; /* Gap between items */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
   .new_collection_items {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* Removed commas */
-    margin-top: 5px;
-    gap: 30px;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; */
+      grid-template-columns: repeat(3, 1fr); /* Three columns on smaller screens */
   }
+
+  .new_collection_heading h1 {
+      font-size: 30px; /* Adjust heading size */
+  }
+}
+
+@media (max-width: 768px) {
+  .new_collection_items {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+
+  .new_collection_heading h1 {
+      font-size: 28px; /* Further adjust heading size */
+  }
+}
+
+@media (max-width: 480px) {
+  .new_collection {
+      padding: 10px; /* Less padding on small screens */
+  }
+
+  .new_collection_heading h1 {
+      font-size: 24px; /* Smaller heading for mobile */
+  }
+
+  .new_collection_items {
+      grid-template-columns: 1fr; /* One column on mobile */
+  }
+}

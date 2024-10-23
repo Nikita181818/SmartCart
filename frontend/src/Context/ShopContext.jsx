@@ -19,6 +19,7 @@ const getDefaultCart = () =>{
 
 
  export const ShopContextProvider = ({children}) =>{
+    // const [all_product,setall_product]=useState([]);
     const products = {all_products};
     const [cart,setCart] = useState(getDefaultCart());
 
@@ -56,20 +57,44 @@ const getDefaultCart = () =>{
             return {...prevCart,[productId] : (prevCart[productId] -1)};
         }))
     }
-    const getTotalCartAmount=()=>{
-        let TotalAmount=0;
+    // const getTotalCartAmount=()=>{
+    //     let TotalAmount=0;
+    //     for(const item in cart)
+    //     {
+    //         if(cart[item]>0)
+    //         {
+    //             let itemInfo=all_products.find((product)=> product.id === Number(item));
+    //             TotalAmount+=itemInfo.new_price*cart[item];
+    //         }
+    //         return TotalAmount;
+    //     }
+    // }
+    const getTotalCartAmount = () => {
+        let TotalAmount = 0;
+        for (const item in cart) {
+            if (cart[item] > 0) {
+                let itemInfo = all_products.find((product) => product.id === Number(item));
+                if (itemInfo) { // Ensure itemInfo is found
+                    TotalAmount += itemInfo.new_price * cart[item];
+                }
+            }
+        }
+        return TotalAmount; // Move this outside the for loop
+    }
+
+    const getTotalCartItems=()=>{
+        let totalItem=0;
         for(const item in cart)
         {
             if(cart[item]>0)
             {
-                let itemInfo=all_products.find((product)=> product.id === Number(item));
-                TotalAmount+=itemInfo.new_price*cart[item];
+                totalItem+=cart[item];
             }
-            return TotalAmount;
         }
+        return totalItem;
     }
 
-    const contextValue = {all_products,cart,addProductToCart,removeProductFromCart,getTotalCartAmount}
+    const contextValue = {all_products,cart,addProductToCart,removeProductFromCart,getTotalCartAmount,getTotalCartItems}
     console.log(cart);
     return(
         <ShopContext.Provider value={contextValue} >
@@ -78,4 +103,4 @@ const getDefaultCart = () =>{
     )
 }
 
-export   default {ShopContextProvider,ShopContext};
+export default {ShopContextProvider,ShopContext};

@@ -10,9 +10,11 @@ import men_banner from "./Components/Assets/banner_mens.png";
 import women_banner from "./Components/Assets/banner_women.png";
 import kids_banner from "./Components/Assets/banner_kids.png";
 import "./App.css";
-import Login from "./Pages/Login";
+import Login from "./Pages/LoginSignup.jsx";
 import Breadcrums from "./Components/Breadcrums/Breadcrums.jsx";
 import Product from "./Pages/Product";
+import { ShopContextProvider } from "./Context/ShopContext.jsx";
+import LoginSignup from "./Pages/LoginSignup.jsx";
 
 
 // {/* <script
@@ -23,6 +25,7 @@ import Product from "./Pages/Product";
 const App = () => {
   return (
     <>
+    <ShopContextProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -32,7 +35,7 @@ const App = () => {
           <Route path="/women" element={<ShopCategory category="women" banner={women_banner} />}></Route>
           <Route path="/kids" element={<ShopCategory category="kid" banner={kids_banner} />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/signin" element={<LoginSignup />}></Route>
           <Route path="/login" element = {<Login/>} ></Route>
           <Route path="/cart" element={<Cart />}></Route>
           {/* <Route path = "/product/:id" element= {<Product/>}></Route> */}
@@ -42,6 +45,7 @@ const App = () => {
 
         <Footer />
       </Router>
+      </ShopContextProvider>
     </>
   );
 };

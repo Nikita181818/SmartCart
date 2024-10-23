@@ -55,7 +55,7 @@ const Cart = () => {
 
                 <div className="cart-summary-item">
                         <span className="label">Total:</span>
-                        <span className="value">₹{(totalCost + shippingCost).toFixed(2)}</span>
+                        <span className="value">₹{(getTotalCartAmount()+100).toFixed(2)}</span>
                 </div>
 
 

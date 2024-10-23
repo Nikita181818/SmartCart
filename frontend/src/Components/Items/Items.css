@@ -44,3 +44,41 @@
     color: #999;
     text-decoration: line-through;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .item {
+        padding: 12px;
+    }
+
+    .item h3 {
+        font-size: 16px;
+    }
+
+    .item-cost {
+        flex-direction: column; /* Stack prices on smaller screens */
+        align-items: center;
+    }
+
+    .item-cost-new, .item-cost-old {
+        font-size: 14px; /* Smaller font for costs */
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        padding: 8px;
+    }
+
+    .item h3 {
+        font-size: 14px;
+    }
+
+    .item-cost {
+        gap: 5px; /* Less gap on very small screens */
+    }
+
+    .item-cost-new, .item-cost-old {
+        font-size: 12px; /* Even smaller font for costs */
+    }
+}
